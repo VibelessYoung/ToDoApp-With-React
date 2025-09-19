@@ -1,11 +1,6 @@
 import TodoItem from "./TodoItem";
 
-function TodoList() {
-  const todos = [
-    { text: "Tailwind CSS To DO App List 1", completed: false },
-    { text: "Tailwind CSS To DO App List 2", completed: true },
-  ];
-
+function TodoList({ todos }) {
   return (
     <ul className="list-none">
       {todos.map((todo, index) => (
