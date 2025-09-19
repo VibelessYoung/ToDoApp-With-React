@@ -5,12 +5,16 @@ import TodoList from "./TodoList";
 
 function App() {
   const [todos, setTodos] = useState([
-    { text: "Tailwind CSS To DO App List 1", completed: false },
-    { text: "Tailwind CSS To DO App List 2", completed: true },
+    { id: 1, text: "Learn React", completed: false },
+    { id: 2, text: "Build Todo App", completed: true },
   ]);
 
   const addTodo = (text) => {
-    setTodos([...todos, { text, completed: false }]);
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -19,7 +23,7 @@ function App() {
         <div className="w-full px-4 py-8 mx-auto shadow lg:w-1/3 bg-white">
           <Header />
           <TodoInput addTodo={addTodo} />
-          <TodoList todos={todos} />
+          <TodoList todos={todos} deleteTodo={deleteTodo}/>
         </div>
       </div>
     </div>
