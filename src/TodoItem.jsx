@@ -1,11 +1,11 @@
-function TodoItem({ todo, deleteTodo}) {
+function TodoItem({ todo, deleteTodo, toggleTodo }) {
   return (
     <li className="relative flex items-center justify-between px-2 py-4 border-b">
       <div>
         <input
           type="checkbox"
           checked={todo.completed}
-          onChange={() =>{}}
+          onChange={() => toggleTodo(todo.id)}
         />
         <p
           className={`inline-block mt-1 ml-2 text-gray-600 ${
