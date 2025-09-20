@@ -29,13 +29,24 @@ function App() {
     );
   };
 
+  const editTodo = (id, newText) => {
+    setTodos(
+      todos.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
+    );
+  };
+
   return (
     <div className="bg-gray-100">
       <div className="flex items-center justify-center h-screen">
         <div className="w-full px-4 py-8 mx-auto shadow lg:w-1/3 bg-white">
           <Header />
           <TodoInput addTodo={addTodo} />
-          <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
+          <TodoList
+            todos={todos}
+            deleteTodo={deleteTodo}
+            toggleTodo={toggleTodo}
+            editTodo={editTodo}
+          />
         </div>
       </div>
     </div>
