@@ -45,12 +45,10 @@ function TodoItem({ todo, deleteTodo, toggleTodo, editTodo }) {
       </div>
 
       <div className="absolute right-0 flex items-center space-x-2">
-        {/* دکمه Edit */}
         <button onClick={handleEdit} className="text-blue-600">
           <Pencil size={20} />
         </button>
 
-        {/* دکمه Delete */}
         <button onClick={() => deleteTodo(todo.id)} className="text-red-700">
           <Trash2 size={20} />
         </button>
